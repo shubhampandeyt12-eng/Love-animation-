@@ -1,0 +1,76 @@
+body{
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+    color:white;
+}
+
+h1{
+    margin-bottom:30px;
+}
+
+.heart{
+    width:100px;
+    height:100px;
+    background:red;
+    position:relative;
+    transform:rotate(-45deg);
+    animation:beat 1s infinite;
+}
+
+.heart::before,
+.heart::after{
+    content:"";
+    width:100px;
+    height:100px;
+    background:inherit;
+    border-radius:50%;
+    position:absolute;
+}
+
+.heart::before{
+    top:-50px;
+    left:0;
+}
+
+.heart::after{
+    left:50px;
+    top:0;
+}
+
+@keyframes beat{
+
+0%{
+transform:rotate(-45deg) scale(1);
+}
+
+50%{
+transform:rotate(-45deg) scale(1.2);
+}
+
+100%{
+transform:rotate(-45deg) scale(1);
+}
+
+}
+
+button{
+margin-top:40px;
+padding:12px 25px;
+font-size:20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+#message{
+margin-top:20px;
+font-size:30px;
+color:pink;
+font-weight:bold;
+text-align:center;
+}
